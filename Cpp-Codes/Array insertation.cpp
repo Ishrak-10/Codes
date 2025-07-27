@@ -16,7 +16,7 @@ int main()
     cout<<endl;
 
     /* insert value 1 at the beginning of array*/
-    for(i=n; i>=0; i--)
+    for(i=n; i>0; i--)
     {
         arr[i] = arr[i-1];
     }
