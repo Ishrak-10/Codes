@@ -7,7 +7,7 @@ int main()
     int n = 5;
 
     cout<<"Before Sorting: ";
-    for(int i=0; i<5; i++)
+    for(int i=0; i<n; i++)
     {
         cout<<ax[i]<<" ";
     }
@@ -27,7 +27,7 @@ int main()
     }
 
     cout<<"After Sorting: ";
-    for(int i=0; i<5; i++)
+    for(int i=0; i<n; i++)
     {
         cout<<ax[i]<<" ";
     }
