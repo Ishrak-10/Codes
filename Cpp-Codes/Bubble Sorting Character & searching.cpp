@@ -31,6 +31,32 @@ int main()
     {
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
+
+    char a;
+    int i;
+    int flag = 0;
+
+    cout<<"Enter the Character for searching: ";
+    cin>>a;
+
+    for(i=0; i<10; i++)
+    {
+        if(a == arr[i])
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 1)
+    {
+        cout<<a<<" found in "<<i<<"th array index";
+    }
+    else
+    {
+        cout<<a<<" is not found";
+    }
 
     return 0;
 }
+
