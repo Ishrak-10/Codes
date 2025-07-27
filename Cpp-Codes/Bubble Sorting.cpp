@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
     int ax[5] = {25,6,88,-100,38};
+    int n = 5;
 
     cout<<"Before Sorting: ";
     for(int i=0; i<5; i++)
@@ -12,15 +13,15 @@ int main()
     }
     cout<<endl;
 
-    for(int step=0; step<5; step++)
+    for(int i=0; i<n-1; i++)
     {
-        for(int i=0; i<4; i++)
+        for(int j=0; j<n-i-1; j++)
         {
-            if(ax[i] > ax[i+1])
+            if(ax[j] > ax[j+1])
             {
-                int temp = ax[i];
-                ax[i] = ax[i+1];
-                ax[i+1] = temp;
+                int temp = ax[j];
+                ax[j] = ax[j+1];
+                ax[j+1] = temp;
             }
         }
     }
