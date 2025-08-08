@@ -1,28 +1,19 @@
 #include<iostream>
 using namespace std;
 
-int main()
+int BinarySearch(int arr[], int n, int target)
 {
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int a;
-    int start = 0;
-    int ending = n;
-    int result = -1;
-
-    cout<<"Enter a Value For Search: ";
-    cin>>a;
-
-    while(start<=ending)
+     int start = 0;
+     int ending = n;
+     while(start<=ending)
     {
         int mid = (start+ending)/2;
 
-        if(arr[mid]==a)
+        if(arr[mid]==target)
         {
-          result = mid;
-          break;
+          return mid;
         }
-        else if(arr[mid]>a)
+        else if(arr[mid]>target)
         {
             ending = mid-1;
         }
@@ -31,9 +22,23 @@ int main()
             start = mid+1;
         }
     }
+    return -1;
+}
+
+int main()
+{
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int target;
+
+    cout<<"Enter a Value For Search: ";
+    cin>>target;
+
+    int result = BinarySearch(arr,n,target);
+
     if(result != -1)
     {
-        cout<<a<<" Found at "<<result<<" index";
+        cout<<target<<" Found at "<<result<<"th index";
     }
     else
     {
@@ -42,4 +47,5 @@ int main()
 
     return 0;
 }
+
 
