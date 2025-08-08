@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int a[5] = {5,7,2,4,9};
+    int a[] = {5,7,2,4,9};
     int n = sizeof(a)/sizeof(a[0]);
 
     cout<<"Before Sorting: ";
@@ -36,3 +36,4 @@ int main()
 
     return 0;
 }
+
