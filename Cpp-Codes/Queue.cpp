@@ -9,18 +9,17 @@ public:
     MyQueue(int Size = 5)
     {
         MaxSize = Size;
-        Front = 0;
-        Rear = 0;
+        Front = Rear = -1;
     }
 
     bool isEmpty()
     {
-        return (Front == Rear);
+        return ((Front == -1) && (Rear == -1));
     }
 
     bool isFull()
     {
-        return (Rear == MaxSize);
+        return (Rear == (MaxSize-1));
     }
 
     bool push(int a)
@@ -30,7 +29,15 @@ public:
             cout<<"Queue is Full\n";
             return false;
         }
-        Queue[Rear++] = a;
+        if(isEmpty())
+        {
+            Front = Rear = 0;
+        }
+        else
+        {
+            Rear++;
+        }
+        Queue[Rear] = a;
         return true;
     }
 
@@ -41,12 +48,24 @@ public:
             cout<<"Queue is Empty\n";
             return false;
         }
-        Front++;
+        if(Front==Rear)
+        {
+            Front=Rear=-1;
+        }
+        else
+        {
+           Front++;
+        }
         return true;
     }
 
     int FrontElement()
     {
+        if(isEmpty())
+        {
+            cout<<"Queue is Empty"<<endl;
+            return -1;
+        }
         return Queue[Front];
     }
 
@@ -58,7 +77,7 @@ public:
             return;
         }
         cout<<"Queue: \n";
-        for(int i=Front; i<Rear; i++)
+        for(int i=Front; i<=Rear; i++)
         {
             cout<<Queue[i]<<endl;
         }
@@ -68,6 +87,7 @@ public:
 int main()
 {
     MyQueue q;
+    q.Show();
     q.push(1);
     q.push(2);
     q.push(3);
