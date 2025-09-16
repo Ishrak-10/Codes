@@ -20,7 +20,7 @@ void PrintList(Node *temp)
 
 void AddDataLast(Node *temp, int info)
 {
-    Node *newNode = new Node;
+    Node *newNode = new Node();
     newNode->data = info;
     newNode->next = NULL;
 
@@ -92,3 +92,4 @@ int main()
     return 0;
 
 }
+
