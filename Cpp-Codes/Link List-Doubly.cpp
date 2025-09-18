@@ -44,6 +44,51 @@ void AddDataTail(Node* &head, Node* &tail, int info)
     tail->next = newNode;
     tail = newNode;
 }
+void PopFront(Node* &head, Node* &tail)
+{
+    if (head == NULL) 
+    {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    Node* temp = head;
+    head = head->next;
+
+    if(head != NULL) 
+    {
+        head->prev = NULL;
+    }  
+    else
+    {
+        tail = NULL;
+    }
+
+    delete temp;
+}
+
+void PopBack(Node* &head, Node* &tail)
+{
+    if (tail == NULL) 
+    {
+        cout << "List is empty!" << endl;
+        return;
+    }
+
+    Node* temp = tail;
+    tail = tail->prev;
+
+    if (tail != NULL)
+    {
+        tail->next = NULL;
+    }
+    else
+    {
+        head = NULL;
+    }
+
+    delete temp;
+}
 
 int main()
 {
