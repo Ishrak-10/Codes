@@ -88,7 +88,7 @@ namespace Library_Management_System
                 Department = "CSE",
                 BorrowedBooks = 2,
                 Semester = 5,
-                MaximumAllowedBooks = 3,
+                MaximumAllowedBooks = 3
             };
 
             FacultyMember Faculty = new FacultyMember
